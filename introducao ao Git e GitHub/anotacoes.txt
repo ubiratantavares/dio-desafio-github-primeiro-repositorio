@@ -1,0 +1,183 @@
+Introdução ao Git
+
+1.1 Entendendo o que é Git e sua importância
+
+	- Controle de versão 
+	- Armazenamento em nuvem
+	- Trabalho em equipe
+	- Melhorar seu código
+	- Reconhecimento
+
+1.2 O que é o GIT?
+
+	Um sistema de versionamento de código distribuído
+	
+1.3 O que é GitHub?
+	
+	Um servidor remoto para armazenamento de código
+
+1.4 Quem foi o criador do Git?
+	
+	Linus Torvalds
+
+1.5 Por que o Git e GitHub te ajudam a trabalhar em equipe?
+	
+2. Navegação via command line interface e instalação
+
+2.1 Comandos básicos para um bom desempenho no terminal
+
+Windows / Unix / Ação / Exemplo na linha de comando
+cd / cd / Mudar de pastas / cd
+dir / ls / Listar as pastas / dir 
+mkdir / mkdir / Criar pastas /arquivos / mkdir workspace
+del/rmdir / rm -rf / Deletar pastas/arquivos / del hello.txt / rmdir workspace /S /Q
+cls / clear / Limpar a tela
+echo / echo Escrever em arquivo / echo hello > hello.txt
+
+2.2 Ressaltando as principais diferenças entre os sistemas operacionais
+
+	-Instalando o GIT: https://git-scm.com/downloads
+
+3 Entendendo como o Git funciona por baixo dos panos
+
+3.1 Tópicos fundamentais para entender o funcionamento do Git
+
+	A sigla SHA significa Secure Hash Algorithm (Algoritmo de Hash Seguro), é um conjunto de funções hash criptográficas projetadas pela NSA (Agência de Segurança Nacional dos EUA).
+	A encriptação gera conjunto de caracteres identificador de 40 dígitos (único).
+	É uma forma curta de representar um arquivo
+
+	Exemplo de utilização do Git
+
+	- Abrir o Git Bash 
+	- digitar o comando:  openssl sha1 lista.txt
+
+3.2 Objetos internos do Git
+
+	- Blobs: objeto básico de composição
+
+		echo 'conteudo' | git hash-object --stdin
+		echo 'conteudo' | openssl sha1
+
+		echo 'conteudo' | git hash-object --stdin
+		echo -e 'blob 9\0conteudo' | openssl sha1
+
+	- Trees: objeto que compõem toda a estrutura do blobs (blob, sa4d8s, texto.txt)
+	
+
+	- Commits
+
+		O sha1 desse commit é o hash de toda a informação.
+
+	Sistema distribuído seguro
+
+4 Primeiros comandos com Git
+
+4.1 Iniciando o Git e criando um commit
+
+	Iniciando o GIT: git init
+	
+		mkdir workspace
+		cd workspace
+		mkdir livro-receitas
+		cd livro-receitas
+		git init
+		ls -a
+		git config --global user.email "ust1973@gmail.com"
+		git config --global user.name Ubiratan
+
+		criar arquivo denominado receita.md em livro-receitas
+
+	
+	Iniciando o versionamento: git add
+
+		git add * 
+
+	
+	Criando um commit: git commit
+
+		git commit -m “commit inicial”
+
+
+5. Ciclo de vida dos arquivos no Git
+
+5.1 Passo a passo no ciclo de vida
+	ls
+	git status
+
+passo a passo do ciclo de vida
+
+	ls
+	cd workspace/livro-receitas
+	git status
+	mkdir receitas
+	ls
+	mv receita.md ./receitas/
+	clear
+	git status
+	git add receita.md receitas/
+	git status
+	git commit -m “cria pasta receitas e move arquivo para receitas”
+	git status
+	clear
+	ls
+	echo > README.md
+	git status
+	git add * (ou git add.)
+	git status
+	git commit -m “adiciona index”
+
+
+6 Introdução ao GitHub
+
+6.1 Trabalhando com o GitHub
+
+	git config --list
+
+	git config --global --unset user.email
+
+	git config --global --unset user.name
+
+	git config --list
+
+	git config --global user.email = “ust1973@gmail.com”
+
+	git config --global user.name = “ubiratantavares”
+
+	git config --list
+
+	https://github.com/ubiratantavares/livro-receitas.git
+
+	git remote add origin https://github.com/ubiratantavares/livro-receitas.git
+
+	git remote -v
+
+	git status
+
+	git push origin master
+
+7 Resolvendo conflitos
+	
+7.1 Como os conflitos acontecem no GitHub e como resolvê-los
+
+	Puxar conteudo do GitHUb para o Git
+
+		git pull origin master
+		git status
+		git add *
+		git commit -m “resolve conflitos”
+		git push origin master
+		git status
+
+
+		git clone https://github.com/python/cpython.git
+		clear
+		ls
+		cd cpython/
+		ls -a
+		git remote -v
+
+
+
+
+
+
